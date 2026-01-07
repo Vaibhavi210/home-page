@@ -1,0 +1,12 @@
+#!/bin/sh
+domain="yudiz.com"
+email="$(git config user.email | awk -F'@' '{print $2}')"
+
+if [[ "$email" == "$domain" ]]; then
+  echo "Using company domain email, proceeding with commit."
+  exit 0
+else
+  echo "ERROR: You are using a NON-company domain email. This commit will not be recorded."
+  echo "Please configure your email with: git config user.email name@your_organization.com"
+  exit 1
+fi
