@@ -1,1 +1,1 @@
- bad         code     with whitespace
+ bad          code     with whitespace
